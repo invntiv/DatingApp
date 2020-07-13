@@ -1,0 +1,8 @@
+.vscode
+DatingApp.API/bin
+DatingApp.API/obj
+
+*.db
+datingapp.db-shm
+datingapp.db-wal
+DatingApp.API/appsettings.json
