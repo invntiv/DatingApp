@@ -27,8 +27,6 @@ namespace DatingApp.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDTO userForRegisterDTO)
         {
-            // validate request
-
             // convert username to lowercase
             userForRegisterDTO.Username = userForRegisterDTO.Username.ToLower();
 
@@ -45,9 +43,12 @@ namespace DatingApp.API.Controllers
             return StatusCode(201);
         }
         
+        /* LOGIN */
+
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDTO userForLoginDTO)
         {
+            
             var userFromRepo = await _repo.Login(userForLoginDTO.Username, userForLoginDTO.Password);
 
             if (userFromRepo == null)
